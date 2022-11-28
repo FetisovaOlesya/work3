@@ -36,7 +36,7 @@ class ShowFragment : Fragment() {
 
             val recipe = RecipeData(name = name, description = description)
             viewModel.insert(recipe)
-            Navigation.findNavController(it).navigate(R.id.action_showFragment_to_listFragment)
+            //Navigation.findNavController(it).navigate(R.id.action_showFragment_to_listFragment)
         }
 
     }

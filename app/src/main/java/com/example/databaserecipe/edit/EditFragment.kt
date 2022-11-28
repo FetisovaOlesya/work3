@@ -15,7 +15,7 @@ import com.example.databaserecipe.list.ListFragmentViewModel
 import com.example.databaserecipe.room.RecipeData
 
 
-class EditFragment : Fragment() {
+class EditFragment : Fragment(R.layout.fragment_edit) {
 
     lateinit var binding: FragmentEditBinding
     lateinit var viewModel: ListFragmentViewModel

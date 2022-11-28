@@ -12,7 +12,7 @@ import com.example.databaserecipe.R
 import com.example.databaserecipe.databinding.FragmentListBinding
 import com.example.databaserecipe.list.ListFragmentViewModel
 
-class ListFragment : Fragment() {
+class ListFragment : Fragment(R.layout.fragment_list) {
 
     lateinit var binding: FragmentListBinding
     lateinit var viewModel: ListFragmentViewModel
@@ -40,21 +40,6 @@ class ListFragment : Fragment() {
 
         binding.floatingActionButton.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_listFragment_to_editFragment)
-        }
-    }
-
-    fun onShowCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val adapter = RecipeDataListAdapter()
-        binding.entityList.adapter = adapter
-
-
-        viewModel.list.observe(requireActivity()) {
-            adapter.items = it
-        }
-
-        binding.floatingActionButton.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_listFragment_to_showFragment)
         }
     }
 }
